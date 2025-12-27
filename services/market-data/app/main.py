@@ -7,6 +7,8 @@ app = FastAPI()
 
 API_KEY = os.getenv("ALPHA_VANTAGE_KEY") #used 'export ..." to set API key
 
+print("API_KEY:", os.environ.get("API_KEY")) #debugging
+
 @app.get("/health") #FastAPI route decorator used to handle GET requests to /health
 def health(): ##function that handles that request - this is just to make sure service works
     return {"status": "ok"}
