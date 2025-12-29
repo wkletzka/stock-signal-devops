@@ -21,7 +21,4 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build \
-          -t stock-data service \ 
-          -f services/market-data/Dockerfile \
-          services/market-data
+          docker build -t stock-service -f services/market-data/Dockerfile services/market-data
