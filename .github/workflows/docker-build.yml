@@ -1,4 +1,5 @@
 #Every time you push code, GitHub automatically verifies that your app can still be built into a Docker image
+#At the bottom: docker build -t NAME -f LOCATION_OF_DOCKERFILE BUILD_CONTENT (files docker can see during build)
 
 name: Build Docker Image
 
@@ -20,4 +21,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t fastapi-stock-app .
+          docker build \
+          -t stock-data service \ 
+          -f services/market-data/Dockerfile \
+          services/market-data
