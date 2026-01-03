@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stock-microservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: stock-microservice
+  template:
+    metadata:
+      labels:
+        app: stock-microservice
+    spec:
+      containers:
+      - name: stock-microservice
+        image: stock-microservice:latest
+        imagePullPolicy: Never # <- needed to add this, tells Kubernetes: “don’t try to pull from Docker Hub; use the local image”
+        ports:
+        - containerPort: 8000
+        env:
+        - name: ALPHA_VANTAGE_KEY
+          value: "NS4E0WZ79SDII9TR"
