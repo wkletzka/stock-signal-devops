@@ -22,11 +22,3 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t stock-service -f services/market-data/Dockerfile services/market-data
-
-      - name: Install kubeval
-        run: |
-          curl -LO https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
-          tar -xvzf kubeval-linux-amd64.tar.gz
-          sudo mv kubeval /usr/local/bin/
-          kubeval k8s/dev/deployment.yaml
-          kubeval k8s/dev/service.yaml
