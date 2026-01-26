@@ -5,8 +5,7 @@ import requests
 
 app = FastAPI()
 
-#API_KEY = os.getenv("ALPHA_VANTAGE_KEY") #used 'export ..." to set API key
-API_KEY = 'NS4E0WZ79SDII9TR'
+API_KEY = os.getenv("ALPHA_VANTAGE_KEY") #used 'export ..." to set API key
 
 print("API_KEY variable:", API_KEY) #debugging
 
