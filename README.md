@@ -26,7 +26,7 @@ cd stock-signal-devops
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 
-API runs at:
+API runs at locally on your device at:
 http://127.0.0.1:8000
 
 Docker
